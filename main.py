@@ -1,5 +1,5 @@
 
-from notes import add_note, view_notes
+from notes import add_note, view_notes, search_notes
 
 while True:
     print("\n==============================")
@@ -17,7 +17,7 @@ while True:
     elif choice == "2":
         add_note()
     elif choice == "3":
-        print("Search feature coming soon!")
+        search_notes()
     elif choice == "4":
         print("Goodbye!")
         break

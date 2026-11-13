@@ -30,3 +30,27 @@ def view_notes():
             print(file.read())
     else:
         print("No notes found for this subject.")
+
+def search_notes():
+    keyword = input("Enter keyword to search: ").strip().lower()
+
+    if not keyword:
+        print("Please enter a keyword.")
+        return
+
+    found = False
+
+    for filename in os.listdir(NOTES_DIR):
+        if filename.endswith(".txt"):
+            path = os.path.join(NOTES_DIR, filename)
+
+            with open(path, "r", encoding="utf-8") as file:
+                for line_number, line in enumerate(file, 1):
+                    if keyword in line.lower():
+                        print(
+                            f"{filename} | Line {line_number}: {line.strip()}"
+                        )
+                        found = True
+
+    if not found:
+        print("No matching notes found.")
