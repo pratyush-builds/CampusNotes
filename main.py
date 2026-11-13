@@ -1,22 +1,25 @@
 
-print("================================")
-print("       CAMPUS NOTES")
-print("================================")
+from notes import add_note, view_notes
 
-print("1. View Notes")
-print("2. Add Notes")
-print("3. Search Notes")
-print("4. Exit")
+while True:
+    print("\n==============================")
+    print("       CAMPUS NOTES")
+    print("==============================")
+    print("1. View Notes")
+    print("2. Add Notes")
+    print("3. Search Notes")
+    print("4. Exit")
 
-choice = input("Enter your choice: ")
+    choice = input("Enter your choice: ")
 
-if choice == "1":
-    print("View Notes selected")
-elif choice == "2":
-    print("Add Notes selected")
-elif choice == "3":
-    print("Search Notes selected")
-elif choice == "4":
-    print("Goodbye!")
-else:
-    print("Invalid choice")
+    if choice == "1":
+        view_notes()
+    elif choice == "2":
+        add_note()
+    elif choice == "3":
+        print("Search feature coming soon!")
+    elif choice == "4":
+        print("Goodbye!")
+        break
+    else:
+        print("Invalid choice!")
